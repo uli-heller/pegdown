@@ -54,11 +54,14 @@ useGpg := true
 
 pgpSigningKey := Some(-2321133875171851978L)
 
+publishTo := Some(Resolver.file("file",  new File( "mvn-repo" )) )
+/*
 publishTo <<= version { v: String =>
   val nexus = "https://oss.sonatype.org/"
   if (v.trim.endsWith("SNAPSHOT")) Some("snapshots" at nexus + "content/repositories/snapshots")
   else                             Some("releases" at nexus + "service/local/staging/deploy/maven2")
 }
+*/
 
 pomExtra :=
   <scm>
